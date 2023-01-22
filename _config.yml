@@ -1,4 +1,38 @@
-theme: jekyll-theme-merlot
+theme: just-the-docs
 title: The Albion Online Data Project
 description: A distributed network to collect and share public Albion Online data.
 google_analytics: UA-96858200-3
+
+# External navigation links
+nav_external_links:
+  - title: Download the Client
+    url: https://github.com/ao-data/albiondata-client/releases
+    hide_icon: false
+  - title: Client Download Stats
+    url: https://tooomm.github.io/github-release-stats/?username=ao-data&repository=albiondata-client
+    hide_icon: false
+
+exclude:
+  - "*.sh"
+  - docker-compose.yml
+  - Dockerfile
+  - Gemfile
+
+search_enabled: false
+color_scheme: dark
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
