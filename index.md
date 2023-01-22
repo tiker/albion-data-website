@@ -35,7 +35,7 @@ The most recent releases can be found here: [https://github.com/ao-data/albionda
 > Note that the client can only upload the market orders that you load in game, so be sure to browse the market for the 
 prices that you need. When a price is uploaded, it is visible in the data immediately.
 
-### The best way to make use of the data is by using the tools that are built on it:
+## The best way to make use of the data is by using the tools that are built on it:
 
 - [Tools4Albion](https://www.tools4albion.com) provides calculators for crafting, farming, and reprocessing. Has a lot 
 of useful information for users and developers alike.
@@ -48,7 +48,8 @@ options for you based on current prices.
 
 If you have a project you'd like to have listed here, contact a maintainer in discord to talk about it.
 
-### Market data can be also be obtained through the API
+## Market data can be also be obtained through the API
+### API Enpoints
 - [Swagger documentation available here](https://www.albion-online-data.com/api/swagger). 
 - Item IDs can be found in the [formatted metadata](https://github.com/ao-data/ao-bin-dumps/tree/master/formatted)
 , for use in the API.
@@ -66,6 +67,27 @@ For any of the following urls, .json is optional and is the default, and .json c
   - **New!** Over time: [`/api/v2/stats/gold.json?date=2-5-2020&end_date=2-12-2020`](https://www.albion-online-data.com/api/v2/stats/gold?date=2-5-2020&end_date=2-12-2020)
   - **New!** Most recent X prices: [`/api/v2/stats/gold.json?count=2`](https://www.albion-online-data.com/api/v2/stats/gold?count=2)
   
+### API Endpoint Rate Limits
+
+- 180 per 1 minute
+- 300 per 5 minutes 
+
+### "I WANT ALL THE DATA FROM THE API"
+
+Well, you can. You just need to do it in a way that doesn't hit the API rate
+limit. Combine the item's you want to get data on, as well as locations. 
+There's about a 2000 character limit for the url length. You can fit a lot of
+items and all the locations in a single call.
+
+Something like [this](https://www.albion-online-data.com/api/v1/stats/prices/T2_SHOES_CLOTH_SET1,T3_SHOES_CLOTH_SET1,T4_SHOES_CLOTH_SET1,T4_SHOES_CLOTH_SET1@1,T4_SHOES_CLOTH_SET1@2,T4_SHOES_CLOTH_SET1@3,T4_SHOES_CLOTH_SET1@4,T5_SHOES_CLOTH_SET1,T5_SHOES_CLOTH_SET1@1,T5_SHOES_CLOTH_SET1@2,T5_SHOES_CLOTH_SET1@3,T5_SHOES_CLOTH_SET1@4,T6_SHOES_CLOTH_SET1,T6_SHOES_CLOTH_SET1@1,T6_SHOES_CLOTH_SET1@2,T6_SHOES_CLOTH_SET1@3,T6_SHOES_CLOTH_SET1@4,T7_SHOES_CLOTH_SET1,T7_SHOES_CLOTH_SET1@1,T7_SHOES_CLOTH_SET1@2,T7_SHOES_CLOTH_SET1@3,T7_SHOES_CLOTH_SET1@4,T8_SHOES_CLOTH_SET1,T8_SHOES_CLOTH_SET1@1,T8_SHOES_CLOTH_SET1@2,T8_SHOES_CLOTH_SET1@3,T8_SHOES_CLOTH_SET1@4,T4_SHOES_CLOTH_SET2,T4_SHOES_CLOTH_SET2@1,T4_SHOES_CLOTH_SET2@2,T4_SHOES_CLOTH_SET2@3,T4_SHOES_CLOTH_SET2@4,T5_SHOES_CLOTH_SET2,T5_SHOES_CLOTH_SET2@1,T5_SHOES_CLOTH_SET2@2,T5_SHOES_CLOTH_SET2@3,T5_SHOES_CLOTH_SET2@4,T6_SHOES_CLOTH_SET2,T6_SHOES_CLOTH_SET2@1,T6_SHOES_CLOTH_SET2@2,T6_SHOES_CLOTH_SET2@3,T6_SHOES_CLOTH_SET2@4,T7_SHOES_CLOTH_SET2,T7_SHOES_CLOTH_SET2@1,T7_SHOES_CLOTH_SET2@2,T7_SHOES_CLOTH_SET2@3,T7_SHOES_CLOTH_SET2@4,T8_SHOES_CLOTH_SET2,T8_SHOES_CLOTH_SET2@1,T8_SHOES_CLOTH_SET2@2,T8_SHOES_CLOTH_SET2@3,T8_SHOES_CLOTH_SET2@4,T4_SHOES_CLOTH_SET3,T4_SHOES_CLOTH_SET3@1,T4_SHOES_CLOTH_SET3@2,T4_SHOES_CLOTH_SET3@3,T4_SHOES_CLOTH_SET3@4,T5_SHOES_CLOTH_SET3,T5_SHOES_CLOTH_SET3@1,T5_SHOES_CLOTH_SET3@2,T5_SHOES_CLOTH_SET3@3,T5_SHOES_CLOTH_SET3@4,T6_SHOES_CLOTH_SET3,T6_SHOES_CLOTH_SET3@1,T6_SHOES_CLOTH_SET3@2,T6_SHOES_CLOTH_SET3@3,T6_SHOES_CLOTH_SET3@4,T7_SHOES_CLOTH_SET3,T7_SHOES_CLOTH_SET3@1,T7_SHOES_CLOTH_SET3@2,T7_SHOES_CLOTH_SET3@3,T7_SHOES_CLOTH_SET3@4,T8_SHOES_CLOTH_SET3,T8_SHOES_CLOTH_SET3@1,T8_SHOES_CLOTH_SET3@2,T8_SHOES_CLOTH_SET3@3,T8_SHOES_CLOTH_SET3@4,T4_SHOES_CLOTH_KEEPER,T4_SHOES_CLOTH_KEEPER@1,T4_SHOES_CLOTH_KEEPER@2,T4_SHOES_CLOTH_KEEPER@3,T4_SHOES_CLOTH_KEEPER@4,T5_SHOES_CLOTH_KEEPER,T5_SHOES_CLOTH_KEEPER@1,T5_SHOES_CLOTH_KEEPER@2,T5_SHOES_CLOTH_KEEPER@3,T5_SHOES_CLOTH_KEEPER@4,T6_SHOES_CLOTH_KEEPER,T6_SHOES_CLOTH_KEEPER@1,T6_SHOES_CLOTH_KEEPER@2,T6_SHOES_CLOTH_KEEPER@3,T6_SHOES_CLOTH_KEEPER@4,T7_SHOES_CLOTH_KEEPER,T7_SHOES_CLOTH_KEEPER@1,T7_SHOES_CLOTH_KEEPER@2,T7_SHOES_CLOTH_KEEPER@3,T7_SHOES_CLOTH_KEEPER@4,T8_SHOES_CLOTH_KEEPER,T8_SHOES_CLOTH_KEEPER@1,T8_SHOES_CLOTH_KEEPER@2,T8_SHOES_CLOTH_KEEPER@3,T8_SHOES_CLOTH_KEEPER@4,T4_SHOES_CLOTH_HELL,T4_SHOES_CLOTH_HELL@1,T4_SHOES_CLOTH_HELL@2,T4_SHOES_CLOTH_HELL@3,T4_SHOES_CLOTH_HELL@4,T5_SHOES_CLOTH_HELL,T5_SHOES_CLOTH_HELL@1,T5_SHOES_CLOTH_HELL@2,T5_SHOES_CLOTH_HELL@3,T5_SHOES_CLOTH_HELL@4,T6_SHOES_CLOTH_HELL,T6_SHOES_CLOTH_HELL@1,T6_SHOES_CLOTH_HELL@2,T6_SHOES_CLOTH_HELL@3,T6_SHOES_CLOTH_HELL@4,T7_SHOES_CLOTH_HELL,T7_SHOES_CLOTH_HELL@1,T7_SHOES_CLOTH_HELL@2?locations=4,7,8,301,1002,1006,1012,1301,2002,2004,2301,3002,3003,3005,3008,3301,4002,4006,4300,4301,5003&qualities=1,2,3,4,5) (too big to show on the page!).
+
+We also ask that if you are going to write a service that continually hits the
+API, please use Gzip compression. The server and bandwidth isn't free and while
+the monthly bandwidth limit hasn't been exceeded that we're aware of, the 
+more people that use the project and it's API, the closer we get to overages.
+
+### Spreadsheets
+
 Many people find it useful to load these APIs in spreadsheets such as Microsoft Excel or Google Sheets. There is no 
 single best way to do this, but some of the common ways are as follows:
 
@@ -76,10 +98,10 @@ single best way to do this, but some of the common ways are as follows:
   - Note: Some people have noticed issues with ImportJSON and repeating rows
   - Example: `=ImportJSON("https://www.albion-online-data.com/api/v2/stats/prices/T4_BAG.json?locations=Caerleon&qualities=2", "", "noHeaders")`
 
-### Related Albion Tools
+# Related Albion Tools
 - [Albion Online Stats - DPS tracker](https://github.com/mazurwiktor/albion-online-stats)
 
-### Configuration
+# Configuration
 You can see all of the current available command line parameters by launching the executable with 
 `"C:\Program Files\Albion Data Client\albiondata-client.exe" -h` or by adding `-h` to the shortcut.
 ## Parameters
@@ -117,38 +139,77 @@ At the time of writing the following are the available (well-supported) configur
 1. Find the task with the name `Albion Data Client`.
 1. Right-click `Disable` to disable the task.
 
-## Troubleshooting
-Starting the client via the command line will allow the error message to persist. For windows do: 
-`"C:\Program Files\Albion Data Client\albiondata-client.exe"` in the Command Prompt.
+# Troubleshooting
 
-### Client crashing
-##### "No such device exists" error
-  - Go to your internet details and find the Physical Address (MAC Address) for your internet connection. It will look 
-  something like `A0-A0-A0-A0-A0-A0`.
-  - Then start the client like `"C:\Program Files\Albion Data Client\albiondata-client.exe" -l "A0-A0-A0-A0-A0-A0"` and
-   it should listen to only the interface that you specified.
+Starting the client via the command line will allow the error message to persist. 
+- Windows
+  - Open a run command prompt window with `WIN + r`
+  - Enter `"C:\Program Files\Albion Data Client\albiondata-client.exe"`
+  - View application output
+- MacOS
+  - Open a terminal `COMMAND + SPACE` and type `terminal`
+  - Enter `/path/to/albiondata-client`
+  - View application output
+- Linux
+  - Open a terminal (too many ways to list, if you use Linux, you should know how)
+  - Enter `/path/to/albiondata-client`
+  - View application output
 
-<!-- ##### On Linux/MacOS, you need elevated privileges.
+## Client crashing
+### Device/Adapter Errors
 
-The easiest way to do this is to run the application with sudo: `sudo ./albiondata-client`. But if you aren't 
-comfortable with that and you are comfortable with the command line, you can add a group that is allowed to run with 
-normal privileges except for tcpdump, which would run as an elevated user. (This is untested as we have no personal 
-Macs to test this on.)
+Includes the following Error Messages:
+- "No such device exists"
+- "Error opening adapter: The system cannot find the device specified. (20)"
+- "eth0: You don't have permission to capture on that device (socket: Operation not permitted)" (Linux/MacOS specific)
+
+This means the client can't attach it self to the network interface to capture Albion Online data.
+
+- Windows
+  - Open a command prompt
+  - Type `ipconfig.exe /all`
+  - Look for the network adapter that give's you connectivity and find the `Physical Address` line:![Alt text](images/ipconfig.png)
+  - Start the client with the `-l` (lower case L) argument, replacing the physical address of your card: `"C:\Program Files\Albion Data Client\albiondata-client.exe" -l "B4-2E-99-31-90-E2"`
+- MacOS
+  - Open a terminal
+  - Type `ifconfig`
+  - Look for the network adapter that give's you connectivity and find the `Physical Address` line:![Alt text](images/macos-ifconfig.png)
+  - Start the client with the `-l` (lower case L) argument, replacing the physical address of your card: `/path/to/albiondata-client -l "14:7D:DA:DB:C6:29"`
+- Linux (essentially the same as MacOS)
+  - Open a terminal
+  - Type `ifconfig`
+  - Look for the network adapter that give's you connectivity and find the `Physical Address` line:![Alt text](images/linux-ifconfig.png)
+  - Start the client with the `-l` (lower case L) argument, replacing the physical address of your card: `/path/to/albiondata-client -l "7E-13-57-B4-C4-3B"`
+
+### MacOS/Linux needs sudo
+
+[Original developer discussing the issue.](https://github.com/regner/albiondata-client/issues/125)
+
+Running the Albion Online Data client with sudo is the easiest way to get going. But, you can work around needing full sudo if you understand Linux/MacOS permssions.
+
+The following has been copied and modified to fit this project's use.
+
+Note: `aod` group is short for "Albion Online Data". You'll need to substitute `/path/to/albiondata-client` with the actual path to your client.
 
 ```
 Add a capture group and add yourself to it:
 
 Source: https://github.com/bettercap/bettercap/issues/783#issuecomment-1021912001
-sudo groupadd pcap
-sudo usermod -a -G pcap $USER
+sudo groupadd aod
+sudo usermod -a -G aod $USER
 
 Next, change the group of tcpdump and set permissions:
 
-sudo chgrp pcap /usr/sbin/tcpdump
-sudo chmod 750 /usr/sbin/tcpdump
-``` -->
+sudo chgrp aod /path/to/albiondata-client
+sudo chmod 750 /path/to/albiondata-client
+```
 
-### Developer Information
+## Client is getting "902" error code
+
+This means you are sending far too much data to the ingest server. Slow down
+your market searching and/or next/back button clicks.
+
+# Developer Information
 If you're building something to consume the data published by the
 Albion Data Project here are some things you will need to know:
 - NATS Connection String: nats://public:thenewalbiondata@www.albion-online-data.com:4222
@@ -167,13 +228,13 @@ New people connecting to the network may have missed previous messages. Along wi
  around is to keep track of the last time an order was seen, and then after not seeing it for X hours remove it has 
  probably having been completed.
 
-### Database Table Exports
+## Database Table Exports
 
 You can find daily table dumps on the server at [https://www.albion-online-data.com/database/](https://www.albion-online-data.com/database/). 
 The export contains a .sql file for each table, and a .zip file for each table that contains a tab-separated .txt data 
 file which can be imported into MySQL using common tools.
 
-### Albion Data Projects
+## Albion Data Projects
 - [albiondata-client](https://github.com/ao-data/albiondata-client)
 - [albiondata-deduper-dotNet](https://github.com/ao-data/albiondata-deduper-dotNet)
 - [albiondata-sql-dotNet](https://github.com/ao-data/albiondata-sql-dotNet)
@@ -181,11 +242,11 @@ file which can be imported into MySQL using common tools.
 - [AlbionData.Models](https://github.com/ao-data/albiondata-models-dotNet) [![NuGet](https://img.shields.io/nuget/v/AlbionData.Models.svg)](https://www.nuget.org/packages/AlbionData.Models/)
 - [albion-data-website](https://github.com/ao-data/albion-data-website) (This website)
 
-### Contact Us
+# Contact Us
 The best way to get in touch with us is on the Albion Online Fansites Discord server in either the #proj-albiondata or 
 the #developers channel. A permanent invite link can be found here: [https://discord.gg/TjWdq24](https://discord.gg/TjWdq24)
 
-### Is This Allowed
+# Is This Allowed
 
 {: .note }
 
