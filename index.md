@@ -44,7 +44,9 @@ different selling metrics for the Auction Houses.
 - [Farm Profit Calculator](http://aofarm.skyline969.ca/) utilizes market data to provide a guide to the best farming 
 options for you based on current prices.
 - [Albion Helper](https://forum.albiononline.com/index.php/Thread/174675-Beta-Albion-Helper-Discord-Market-Bot-Crafting-Calculator/#post1270471)
- (forked from Albion Assistant) A discord bot to retrieve prices from Albion Online Data Project APIs.
+ (forked from Albion Assistant) A discord bot to retrieve prices from Albion Online Data Project APIs. Maintained by Discord User Divined#9833.
+- [Albionix Tools](https://albionix.app/) is a calculator for Transporting Item profitability and some market analysis.
+Maintained by Discord User Kytavian#4406.
 
 If you have a project you'd like to have listed here, contact a maintainer in discord to talk about it.
 
