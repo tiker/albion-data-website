@@ -108,29 +108,35 @@ You can see all of the current available command line parameters by launching th
 At the time of writing the following are the available (well-supported) configuration options:
 ```
 "C:\Program Files\Albion Data Client\albiondata-client.exe" -h
-  -d    If specified no attempts will be made to upload data to remote server.
+  -d	If specified no attempts will be made to upload data to remote server.
   -debug
-        Enable debug logging.
+    	Enable debug logging.
   -events string
-        Whitelist of event IDs to output messages when debugging. Comma separated.
+    	Whitelist of event IDs to output messages when debugging. Comma separated.
   -events-ignore string
-        Blacklist of event IDs to hide messages when debugging. Comma separated.
+    	Blacklist of event IDs to hide messages when debugging. Comma separated.
   -i string
-        Base URL to send PUBLIC data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders. Comma separated. (default "nats://public:thenewalbiondata@www.albion-online-data.com:4222")
+    	Base URL to send PUBLIC data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders. Comma separated. (default "http+pow://www.albion-online-data.com:4223")
   -ignore-decode-errors
-        Ignore the decoding errors when debugging
+    	Ignore the decoding errors when debugging
   -l string
-        Listen on this comma separated devices instead of all available
+    	Listen on this comma separated devices instead of all available
   -minimize
-        Automatically minimize the window.
+    	Automatically minimize the window.
+  -no-limit
+    	Use all available CPU cores
   -o string
-        Parses a local file instead of checking albion ports.
+    	Parses a local file instead of checking albion ports.
   -operations string
-        Whitelist of operation IDs to output messages when debugging. Comma separated.
+    	Whitelist of operation IDs to output messages when debugging. Comma separated.
   -operations-ignore string
-        Blacklist of operation IDs to hide messages when debugging. Comma separated.
+    	Blacklist of operation IDs to hide messages when debugging. Comma separated.
+  -output-file
+    	Enable logging to file.
   -p string
-        Base URL to send PRIVATE data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders. Comma separated.
+    	Base URL to send PRIVATE data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders. Comma separated.
+  -record string
+    	Enable recording commands to a file for debugging later.
 ```
 
 ## Disable Start With Windows
